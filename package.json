@@ -1,0 +1,32 @@
+{
+  "name": "alb3rt-core",
+  "version": "0.1.1",
+  "description": "Alb3rt Core",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libtomsoftware/alb3rt-core.git"
+  },
+  "keywords": [
+    "alb3rt"
+  ],
+  "author": "Libtom Software Ltd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/libtomsoftware/alb3rt-core/issues"
+  },
+  "homepage": "https://github.com/libtomsoftware/alb3rt-core#readme",
+  "dependencies": {
+    "body-parser": "*",
+    "chalk": "*",
+    "dot-env": "*",
+    "express": "*",
+    "fs-extra": "*",
+    "moment": "*",
+    "python-shell": "*",
+    "request": "*"
+  }
+}
