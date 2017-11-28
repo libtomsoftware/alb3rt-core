@@ -4,7 +4,10 @@ const chalk = require('chalk'),
     warning = chalk.keyword('orange'),
     helpers = require('../helpers'),
     http = require('../http'),
-    CONFIG = require('../config'),
+    ROOT_PATH = process.cwd(),
+    PACKAGE_CONFIG = require(ROOT_PATH + '/package.json'),
+    dbGatewayUrl = process.env.URL_DB_GATEWAY,
+    appId = process.env.APP_ID || PACKAGE_CONFIG.name,
     noop = () => {};
 
 module.exports = new class Alb3rtLogger {
@@ -29,9 +32,9 @@ module.exports = new class Alb3rtLogger {
     }
 
     store(type, message) {
-        if (CONFIG.URL.DB_GATEWAY) {
+        if (dbGatewayUrl) {
             const body = {
-                _id: `entry-${CONFIG.APP.ID}-${helpers.currentTimestamp}`,
+                _id: `entry-${appId}-${helpers.currentTimestamp}`,
                 file: fileId,
                 type,
                 message,
@@ -39,7 +42,7 @@ module.exports = new class Alb3rtLogger {
 
         
             http.put({
-                url: `${CONFIG.URL.DB_GATEWAY}/api/logs`, 
+                url: `${dbGatewayUrl}/api/logs`, 
                 body
             });
         }
