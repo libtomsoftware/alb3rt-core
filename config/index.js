@@ -12,6 +12,8 @@ const ENV = process.env, //eslint-disable-line one-var
         TYPE: ENV.APP_TYPE || 'service'
     };
 
+console.log('AAA', ENV.APP_HTTP_PORT);
+
 module.exports = {
     APP: Object.assign({}, APP, {
         ID: ENV.APP_ID || `${PACKAGE_CONFIG.name}@${APP.ADDRESS.URL}:${APP.ADDRESS.HTTP_PORT}`
