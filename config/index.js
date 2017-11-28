@@ -30,6 +30,7 @@ module.exports = {
     },
     PYTHON_SCRIPTS_PATH: process.env.PYTHON_SCRIPTS_PATH || './scripts/python',
     URL: {
+        DB_GATEWAY: ENV.URL_DB_GATEWAY,
         REGISTRY: ENV.URL_REGISTRY,
         SECURITY: ENV.URL_SECURITY,
         SENSORS_HUB: ENV.URL_SENSORS_HUB
