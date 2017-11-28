@@ -1,6 +1,6 @@
 {
   "name": "alb3rt-core",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Alb3rt Core",
   "main": "index.js",
   "scripts": {
