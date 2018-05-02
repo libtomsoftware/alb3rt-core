@@ -41,10 +41,14 @@ module.exports = new class Alb3rtLogger {
             };
 
         
-            http.put({
-                url: `${dbGatewayUrl}/api/logs`, 
-                body
-            });
+            http
+                .put({
+                    url: `http://${dbGatewayUrl}/api/logs`, 
+                    body
+                })
+                .catch(error => {
+                    console.log(warning(`${helpers.currentTimestamp} [logger]`), chalk.yellow(`Storing log in database failed. ${error}`));
+                });
         }
     }
 
