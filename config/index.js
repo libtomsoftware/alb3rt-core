@@ -2,7 +2,7 @@ const ENV = process.env, //eslint-disable-line one-var
     ROOT_PATH = process.cwd(),
     PACKAGE_CONFIG = require(ROOT_PATH + '/package.json'),
     APP_HTTP_PORT = ENV.APP_HTTP_PORT || 4000,
-    APP_URL = ENV.APP_IP || 'localhost',
+    APP_URL = ENV.APP_IP || '127.0.0.1',
     APP = {
         ADDRESS: {
             HTTP_PORT: APP_HTTP_PORT,
